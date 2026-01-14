@@ -10,6 +10,8 @@ import {
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+import Provider from "./provider";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -40,17 +42,21 @@ export default function RootLayout({
             <SignedOut>
               <SignInButton />
               <SignUpButton>
-                <button className="bg-black text-white rounded-full font-medium text-xs sm:text-sm h-6 sm:h-9 px-3 sm:px-4 cursor-pointer transition-all duration-300 btn-animate">Sign Up</button>
+                <button className="bg-black text-white rounded-full font-medium text-xs sm:text-sm h-6 sm:h-9 px-3 sm:px-4 cursor-pointer transition-all duration-300 btn-animate">
+                  Sign Up
+                </button>
               </SignUpButton>
             </SignedOut>
             <SignedIn>
               <UserButton>
-                <button className="bg-grey text-white rounded-full font-medium text-xs sm:text-sm h-6 sm:h-9 px-3 sm:px-4 cursor-pointer transition-all duration-300 btn-animate">Sign In</button>
-              
+                <button className="bg-grey text-white rounded-full font-medium text-xs sm:text-sm h-6 sm:h-9 px-3 sm:px-4 cursor-pointer transition-all duration-300 btn-animate">
+                  Sign In
+                </button>
               </UserButton>
             </SignedIn>
           </header>
-          {children}
+          <Provider>{children}</Provider>
+          
         </body>
       </html>
     </ClerkProvider>
