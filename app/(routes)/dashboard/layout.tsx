@@ -1,9 +1,15 @@
 import React from "react";
+import AppHeader from "./_components/AppHeader";
 
 function DashboardLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  return <div className="dashboard-layout">{children}</div>;
+  return (
+    <div className="px-10 md:px-20 lg:px-40">
+      <AppHeader />
+      {children}
+    </div>
+  );
 }
 
 export default DashboardLayout;
