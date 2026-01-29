@@ -1,11 +1,11 @@
 "use client";
 import React from "react";
+import AppHeader from "./_components/AppHeader";
 
 const Dashboard = () => {
   return (
     <div>
-      <h1>Dashboard</h1>
-      <p>Welcome to your dashboard</p>
+      <AppHeader />
     </div>
   );
 };
